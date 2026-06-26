@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<![CDATA[<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -58,7 +58,6 @@
   .compat-note{margin-top:48px;padding:20px 24px;border-radius:var(--radius-sm);background:rgba(221,187,88,0.06);border-left:3px solid var(--gold);font-size:14px;color:var(--text-muted);line-height:1.7}
   .compat-note strong{color:var(--gold-light)}
   .footer{margin-top:52px;text-align:center;color:var(--text-dim);font-size:12px;line-height:2}
-  .footer a{color:var(--text-muted);text-decoration:none}
   .toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.8);padding:14px 28px;border-radius:999px;background:var(--gold-dark);color:#102419;font-weight:700;font-size:15px;z-index:999;opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s}
   .toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
 </style>
@@ -108,3 +107,24 @@
 <h2 class="section-title">扫码直接进</h2>
 <p class="section-desc">打开微信扫一扫，扫描小程序码即可进入。</p>
 <div class="qr-section">
+<img src="qr.png" alt="足球甚了小程序码" onerror="this.outerHTML='<div style=padding:40px;color:#ddbb58;font-size:15px>📱 请在微信中搜索 <strong>足球甚了</strong></div>'">
+<p class="qr-note">微信扫一扫即可进入</p>
+</div>
+</section>
+<div class="compat-note">
+<strong>📌 提示：</strong>足球甚了是微信小程序，只能在<strong>微信客户端</strong>内打开。如果你正在抖音/小红书/浏览器中看到此页面，请按上方步骤去微信搜索「足球甚了」即可使用。
+</div>
+<footer class="footer">
+<p>⚽ 足球甚了 · 世界杯 AI 预测小程序</p>
+<p>个人作品 · 数据仅供参考</p>
+<p style="margin-top:8px">仅供娱乐，理性参考</p>
+</footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function copyName(){const t='足球甚了';navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(t).then(()=>showToast('✅ 已复制！去微信搜索「足球甚了」')):(()=>{const e=document.createElement('textarea');e.value=t,e.style.position='fixed',e.style.opacity='0',document.body.appendChild(e),e.select(),document.execCommand('copy'),document.body.removeChild(e),showToast('✅ 已复制！去微信搜索「足球甚了」')})()}
+function showToast(t){const e=document.getElementById('toast');e.textContent=t,e.classList.add('show'),setTimeout(()=>e.classList.remove('show'),2200)}
+!function(){const t=document.getElementById('statUsers'),e=parseInt(t.textContent)||0,n=299;if(e>=n)return;const o=Math.ceil((n-e)/40);let i=e;const s=setInterval(()=>{i=Math.min(i+o,n),t.textContent=i,i>=n&&clearInterval(s)},30)}();
+</script>
+</body>
+</html>]]>
